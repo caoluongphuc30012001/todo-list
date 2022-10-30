@@ -1,0 +1,40 @@
+@url=http://localhost:3051/v1/api
+
+### Get list job user
+GET {{url}}/job?uid=1
+
+### Add a new job
+
+POST {{url}}/job
+Content-Type: application/json
+
+{
+    "uid":1,
+    "JobName":"Đi học",
+    "JobDescription":"Đi học trên trường",
+    "StartDay": "1960-01-01 23:03:20",
+    "EndDay":"1960-01-01 23:03:20"
+}
+
+### Delete a job
+
+DELETE {{url}}/job
+Content-Type: application/json
+
+{
+    "id": 8
+}
+
+### Update a job
+
+PUT {{url}}/job
+Content-Type: application/json
+
+{
+    "uid":1,
+    "JobName":"Đi học",
+    "JobDescription":"Đi học trên trường ngoan",
+    "StartDay": "1960-01-01 23:03:00",
+    "EndDay":"1960-01-01 23:03:20",
+    "id":7
+}

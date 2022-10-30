@@ -1,0 +1,20 @@
+@url=http://localhost:3051/v1/api
+### Create a new user 
+POST  {{url}}/user/create-new-user
+Content-Type: application/json
+
+{
+    "FullName": "Cao Luong Phuc",
+    "UserName":"caoluongphuc2",
+    "Email":"phuccao.30012001@gmail.com",
+    "Password":"phuc0936155228"
+}
+
+### Create a new user 
+POST  {{url}}/user/forgot-password
+Content-Type: application/json
+
+{
+    "UserName":"caoluongphuc2",
+    "Email":"phuccao.30012001@gmail.com"
+}
