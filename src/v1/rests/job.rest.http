@@ -22,7 +22,8 @@ DELETE {{url}}/job
 Content-Type: application/json
 
 {
-    "id": 8
+    "id": 24,
+    "uid": "1"
 }
 
 ### Update a job

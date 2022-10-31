@@ -23,10 +23,10 @@ export const updateJob = async (id, update_job, action) => {
     }
 };
 
-export const removeJob = async (id, action) => {
+export const removeJob = async (id, uid, action) => {
     try {
-        const deleteQuery = `delete from job where ?`;
-        await db.query(deleteQuery, { id }, (err, result) => {
+        const deleteQuery = `delete from job where id = ? and uid = ?`;
+        await db.query(deleteQuery, [id, uid], (err, result) => {
             if (err) action(err.sqlMessage);
             else action("Delete job success");
         });

@@ -4,7 +4,6 @@ import responseTime from "response-time";
 import "./v1/databases/init.mysql.js";
 import route from "./v1/routes/index.router.js";
 const app = express();
-// require('./v1/databases/init.redis')
 
 app.use(responseTime());
 // compress responses

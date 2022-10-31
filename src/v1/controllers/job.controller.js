@@ -5,10 +5,12 @@ import {
     removeJob,
     updateJob,
 } from "../services/job.service.js";
+import { setListJob } from "../services/redis.service.js";
 class JobController {
     getListJob = async (req, res) => {
         try {
             const { uid } = req.query;
+            setListJob(uid);
             await getListJob(uid, (result) => {
                 res.status(200).send({ result });
             });
@@ -35,6 +37,7 @@ class JobController {
                 EndDay
             );
             await addJob(new_job, (result) => {
+                setListJob(uid);
                 res.status(200).send({ result });
             });
         } catch (error) {
@@ -62,6 +65,7 @@ class JobController {
                 EndDay
             );
             await updateJob(id, update_job, (result) => {
+                setListJob(uid);
                 res.status(200).send({ result });
             });
         } catch (error) {
@@ -71,8 +75,9 @@ class JobController {
 
     removeJob = async (req, res) => {
         try {
-            const { id } = req.body;
-            await removeJob(id, (result) => {
+            const { id, uid } = req.body;
+            await removeJob(id, uid, (result) => {
+                setListJob(uid);
                 res.status(200).send({ result });
             });
         } catch (error) {
