@@ -10,7 +10,7 @@ Content-Type: application/json
     "Password":"phuc0936155228"
 }
 
-### Create a new user 
+### Forgot a new user 
 POST  {{url}}/user/forgot-password
 Content-Type: application/json
 

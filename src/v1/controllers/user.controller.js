@@ -35,6 +35,9 @@ class UserController {
                         userInfor.Password
                     );
                     email.sendEmail();
+                    res.status(200).send({
+                        result: "Password send to your email",
+                    });
                 }
             };
             await getInforUser(UserName, Email, sendEmail);

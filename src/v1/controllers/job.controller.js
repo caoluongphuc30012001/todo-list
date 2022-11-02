@@ -20,19 +20,12 @@ class JobController {
     };
     addJob = async (req, res) => {
         try {
-            const {
-                uid,
-                JobName,
-                JobDescription,
-                JobStatus,
-                StartDay,
-                EndDay,
-            } = req.body;
+            const { uid, JobName, JobDescription, StartDay, EndDay } = req.body;
             const new_job = new Job(
                 uid,
                 JobName,
                 JobDescription,
-                JobStatus,
+                "pending",
                 StartDay,
                 EndDay
             );

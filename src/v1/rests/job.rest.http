@@ -37,5 +37,6 @@ Content-Type: application/json
     "JobDescription":"Đi học trên trường ngoan",
     "StartDay": "1960-01-01 23:03:00",
     "EndDay":"1960-01-01 23:03:20",
-    "id":7
+    "id":25,
+    "JobStatus": "complete"
 }

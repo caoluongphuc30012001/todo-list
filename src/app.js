@@ -3,7 +3,32 @@ import compression from "compression";
 import responseTime from "response-time";
 import "./v1/databases/init.mysql.js";
 import route from "./v1/routes/index.router.js";
+import swaggerJsdoc from "swagger-jsdoc";
+import swaggerUI from "swagger-ui-express";
+
+const options = {
+    definition: {
+        openapi: "3.0.0",
+        info: {
+            title: "Library Api for todolist backend",
+            version: "1.0.0",
+            description:
+                "This is list of API of Todolist Back end. Which use nodejs, redis, jwt, mysql",
+            termsOfService: "http://swagger.io/terms/",
+            contact: {
+                email: "phuccao.30012001@gmail.com",
+            },
+        },
+        servers: [{ url: "http://localhost:3051/v1/api" }],
+    },
+    apis: ["src/v1/swagger/*.js", "src/v1/routes/*.js"],
+};
+
+const specs = swaggerJsdoc(options);
+
 const app = express();
+
+app.use("/v1/api/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
 
 app.use(responseTime());
 // compress responses
