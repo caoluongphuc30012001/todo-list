@@ -5,6 +5,7 @@ import "./v1/databases/init.mysql.js";
 import route from "./v1/routes/index.router.js";
 import swaggerJsdoc from "swagger-jsdoc";
 import swaggerUI from "swagger-ui-express";
+import cors from "cors";
 
 const options = {
     definition: {
@@ -27,6 +28,13 @@ const options = {
 const specs = swaggerJsdoc(options);
 
 const app = express();
+
+app.use(
+    cors({
+        origin: "*",
+        method: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    })
+);
 
 app.use("/v1/api/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
 
