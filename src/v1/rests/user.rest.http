@@ -18,3 +18,21 @@ Content-Type: application/json
     "UserName":"caoluongphuc2",
     "Email":"phuccao.30012001@gmail.com"
 }
+
+### Login user
+POST {{url}}/user/login
+Content-Type: application/json
+
+{
+    "UserName":"caoluongphuc2",
+    "Password":"phuc0936155228"
+}
+
+
+### Refresh Token
+POST {{url}}/user/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjYsImlhdCI6MTY2NzQ4OTQ3OSwiZXhwIjoxNjY3NDg5Nzc5fQ.anL9ftCylwA08LKtnXJUF2K9wUBmc7ummX_m0Ikm68o"
+}

@@ -2,6 +2,7 @@
 
 ### Get list job user
 GET {{url}}/job?uid=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjYsImlhdCI6MTY2NzQ5MzQ2OCwiZXhwIjoxNjY3NDkzNTI4fQ.qNEA3K_yDCRR-RXZi6Eh9aefGc7Bg-c-7NRdMRmrf18
 
 ### Add a new job
 

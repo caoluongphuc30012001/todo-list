@@ -1,4 +1,9 @@
-import { createNewUser, getInforUser } from "../services/user.service.js";
+import {
+    createNewUser,
+    getInforUser,
+    login,
+    refresh,
+} from "../services/user.service.js";
 import User from "../models/user.model.js";
 import { validateEmail } from "../utils/validateEmail.util.js";
 import Mail from "../databases/init.email.js";
@@ -36,11 +41,33 @@ class UserController {
                     );
                     email.sendEmail();
                     res.status(200).send({
-                        result: "Password send to your email",
+                        result: "Password sensd to your email",
                     });
                 }
             };
             await getInforUser(UserName, Email, sendEmail);
+        } catch (error) {
+            res.status(500).send(error);
+        }
+    }
+
+    async login(req, res) {
+        try {
+            const { UserName, Password } = req.body;
+            await login(UserName, Password, (result) => {
+                res.status(200).send({ result });
+            });
+        } catch (error) {
+            res.status(500).send(error);
+        }
+    }
+
+    async refresh(req, res) {
+        try {
+            const { refreshToken } = req.body;
+            await refresh(refreshToken, (result) => {
+                res.status(200).send({ result });
+            });
         } catch (error) {
             res.status(500).send(error);
         }
