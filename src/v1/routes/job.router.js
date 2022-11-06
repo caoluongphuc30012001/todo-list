@@ -9,6 +9,9 @@ const router = Router();
  *    get:
  *      summary: Lấy toàn bộ công việc hiện tại của một user
  *      tags: [Jobs]
+ *      BearerAuth:
+ *        type: http
+ *        scheme: bearer
  *      parameters:
  *        - in: query
  *          name: uid
@@ -31,6 +34,9 @@ router.get("/", redisController.getListJob, jobController.getListJob);
  *    post:
  *      summary: Thêm một công việc mới cho user
  *      tags: [Jobs]
+ *      BearerAuth:
+ *        type: http
+ *        scheme: bearer
  *      requestBody:
  *        required: true
  *        content:
@@ -70,6 +76,9 @@ router.post("/", jobController.addJob);
  *    put:
  *      summary: Chỉnh sửa một công việc
  *      tags: [Jobs]
+ *      BearerAuth:
+ *        type: http
+ *        scheme: bearer
  *      requestBody:
  *        required: true
  *        content:
@@ -114,6 +123,9 @@ router.put("/", jobController.updateJob);
  *    delete:
  *      summary: Xóa một công việc
  *      tags: [Jobs]
+ *      BearerAuth:
+ *        type: http
+ *        scheme: bearer
  *      requestBody:
  *        required: true
  *        content:
