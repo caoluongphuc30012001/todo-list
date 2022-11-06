@@ -54,3 +54,13 @@
  *            items:
  *              $ref: '#components/schemas/JobInformation'
  */
+/**
+ *  @swagger
+ *  components:
+ *    securitySchemes:
+ *      bearerAuth:
+ *        type: http
+ *        scheme: bearer
+ *        bearerFormat: JWT
+ *
+ */
