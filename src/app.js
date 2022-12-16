@@ -20,7 +20,7 @@ const options = {
                 email: "phuccao.30012001@gmail.com",
             },
         },
-        servers: [{ url: "https://rocky-spire-87362.herokuapp.com/v1/api" }],
+        servers: [{ url: "https://todolist-phuc.herokuapp.com/v1/api" }],
     },
     apis: ["src/v1/swagger/*.js", "src/v1/routes/*.js"],
 };
